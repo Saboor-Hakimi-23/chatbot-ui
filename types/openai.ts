@@ -12,12 +12,19 @@ export enum OpenAIModelID {
   GPT_3_5_AZ = 'gpt-35-turbo',
   GPT_4 = 'gpt-4',
   GPT_4_32K = 'gpt-4-32k',
+  ADA_ASEEL = 'ada:ft-aseelapp-2023-09-06-21-36-57'
 }
 
 // in case the `DEFAULT_MODEL` environment variable is not set or set to an unsupported model
 export const fallbackModelID = OpenAIModelID.GPT_3_5;
 
 export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
+  [OpenAIModelID.ADA_ASEEL]: {
+    id: OpenAIModelID.ADA_ASEEL,
+    name: "Aseel Spanish Fine Tunning",
+    maxLength: 12000,
+    tokenLimit: 4000,
+  },
   [OpenAIModelID.GPT_3_5]: {
     id: OpenAIModelID.GPT_3_5,
     name: 'GPT-3.5',
